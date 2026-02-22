@@ -1,140 +1,110 @@
 🔐 Secure Hybrid Encrypted File Storage System
-Overview
-The Secure Hybrid Encrypted File Storage System is a multi-layered cryptographic solution designed to provide high-level confidentiality, integrity, and controlled access for digital file storage.
-This system combines symmetric encryption (AES-256), asymmetric key protection (RSA-2048), chaos-based cipher diffusion, compression techniques, and OTP-based verification to create a secure and efficient file management platform.
-The project demonstrates practical implementation of hybrid encryption architecture in a real-world web application environment.
+📌 Project Overview
 
-Objectives
+The Secure Hybrid Encrypted File Storage System is a multi-layered security framework designed to protect user files through advanced cryptographic techniques. The system integrates symmetric encryption (AES-256), asymmetric encryption (RSA-2048), chaos-based randomization, hashing, compression, and OTP-based authentication to ensure strong confidentiality, integrity, and controlled access.
 
-Implement a high-performance hybrid encryption model
-Ensure secure key management using asymmetric cryptography
-Add an additional non-linear security layer using chaos theory
-Provide authenticated access with OTP verification
-Maintain data integrity through cryptographic hashing
-Deliver a clean, structured, and user-friendly interface
+This project demonstrates how hybrid encryption can combine performance and security while providing a practical file storage solution.
 
-System Architecture
-The platform follows a structured encryption and decryption pipeline:
+🚀 Key Features
 
-Encryption Workflow
+✅ User Registration & Secure Login
+✅ AES-256 File Encryption
+✅ RSA-2048 Key Wrapping
+✅ Chaos-Based Cipher Diffusion
+✅ SHA-256 Integrity Verification
+✅ ZIP Compression for Storage Optimization
+✅ OTP-Based Secure Decryption
+✅ Metadata Generation & Audit Tracking
+✅ User-Specific Secure Dashboard
 
-User authentication and session validation
-File upload and preprocessing
-Optional compression
-AES-256 symmetric encryption
-RSA-2048 public key wrapping of AES key
-Chaos-based ciphertext transformation
-Metadata generation and secure storage
+🏗️ System Architecture
 
-Decryption Workflow
+The system follows a hybrid encryption workflow:
+File Upload
+ZIP Compression
+AES-256 Encryption
+RSA Key Wrapping (AES key encrypted with RSA public key)
+Chaos-Based Cipher Transformation
+Metadata Generation
+Secure Storage
 
-OTP verification
-RSA private key unwrapping
-Reverse chaotic diffusion
-AES-256 decryption
-File restoration and secure download
+For decryption:
+OTP Verification
+RSA Private Key Unwrap
+Reverse Chaos Diffusion
+AES Decryption
+Original File Restoration
 
-Core Modules
+🧩 Modules
 
-Authentication & Session Management
+1️⃣ User Authentication Module
+Handles user registration, login, password hashing, and session management using Flask-Login.
 
-Secure user registration and login
-Password hashing
-Session protection using Flask-Login
-User-isolated storage directories
+2️⃣ File Upload & Pre-Processing
+Accepts multiple file formats and converts them into binary format for encryption.
 
-File Processing Engine
+3️⃣ AES Encryption Module
+Encrypts files using AES-256 with a randomly generated key and IV.
 
-Supports multiple file formats
-Binary conversion and preprocessing
-File size and metadata extraction
+4️⃣ RSA Key Wrapping Module
+Secures the AES key using RSA-2048 encryption.
 
-AES Encryption Module
-256-bit symmetric encryption
-Random key and IV generation
-High-speed encryption for large files
+5️⃣ Chaos-Based Security Layer
+Applies logistic map-based transformation to increase unpredictability.
 
-RSA Key Management
+6️⃣ Compression Module
+Reduces storage size using ZIP compression.
 
-2048-bit asymmetric encryption
-Secure AES key wrapping
-Prevents unauthorized key access
+7️⃣ Metadata Storage Module
+Stores encryption parameters, file hash, timestamps, and statistics.
 
-Chaos-Based Security Layer
+8️⃣ OTP-Based Decryption
+Adds two-factor authentication before decryption.
 
-Logistic map-based diffusion
-Enhances randomness
-Reduces statistical attack feasibility
+🛠️ Technologies Used
 
-Compression Module
+Python
+Flask
+Flask-Login
+PyCryptodome
+RSA Cryptography
+SHA-256 Hashing
+ZIP Compression
+JSON Metadata Handling
 
-ZIP-based storage optimization
-Tracks compression statistics
+🔒 Security Highlights
+Hybrid encryption approach
+Multi-layered protection
+Secure key exchange mechanism
+Protection against brute-force attacks
+Integrity verification using hashing
+OTP-based access control
 
-Metadata & Audit Logging
+📊 Testing Results
 
-Stores IV, wrapped key, hash, timestamps
-SHA-256 integrity verification
+Successfully encrypted and decrypted multiple file formats
+Verified data integrity using hash comparison
+Confirmed failure of decryption with incorrect keys
+Achieved secure storage in encrypted form only
 
-Ensures traceability
-
-OTP-Based Access Control
-
-Email-based one-time password verification
-Two-factor protection before decryption
-
-Technology Stack
-Backend
- Python
- Flask
- Flask-Login
-
-Cryptography & Security
- PyCryptodome
- AES-256
- RSA-2048
- SHA-256
-
-Data Handling
- JSON Metadata
- ZIP Compression
-
-Security Design Highlights
-
-Hybrid encryption for balanced performance and security
-Separation of encryption and key management
-Multi-layer defense model (AES + RSA + Chaos + OTP)
-Integrity validation using SHA-256 hashing
-Encrypted-only storage policy
-User-isolated file environments
-
-Performance & Testing
-
-Successfully tested with documents, images, and media files
-Verified encryption and decryption consistency
-Confirmed decryption failure with incorrect keys
-Demonstrated secure OTP validation mechanism
-Observed expected ciphertext size variation due to encryption randomness
-
-Installation
-git clone https://github.com/your-username/secure-hybrid-encrypted-storage.git
-cd secure-hybrid-encrypted-storage
+📂 Installation
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
 pip install -r requirements.txt
 python app.py
 
-Usage
+🖥️ Usage
 
-Register a new user account
+Register a new account
 Login securely
 Upload a file
 Encrypt and store
-Request OTP for decryption
-Download restored file
+Request OTP
+Decrypt and download
 
-Future Enhancements
+🎯 Future Improvements
 
-Cloud storage integration (AWS / Azure / GCP)
-Hardware Security Module (HSM) support
-Secure file sharing between users
-API integration for enterprise deployment
-Advanced audit logging and monitoring
+Cloud integration (AWS / Azure)
+Multi-factor authentication expansion
+Blockchain-based audit logs
+File sharing with secure key exchange
